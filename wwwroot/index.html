@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Sky - File Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-top">
+                <h1>Infinite Sky Explorer</h1>
+                <div class="header-actions">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; cursor: pointer;">
+                        <input type="checkbox" id="prevent-traversal-toggle" checked> Prevent Path Traversal
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; cursor: pointer;">
+                        <input type="checkbox" id="hide-system-toggle" checked> Hide hidden files
+                    </label>
+                    <input type="text" id="search-input" class="search-bar" placeholder="Search files and folders..." />
+                    <button class="btn btn-primary" id="btn-upload">Upload File</button>
+                </div>
+            </div>
+            
+            <div class="breadcrumb" id="breadcrumb">
+                <!-- Breadcrumbs will be rendered here -->
+            </div>
+            
+            <div class="dynamic-totals" id="dynamic-totals">
+                <!-- Dynamic Totals will be rendered here -->
+            </div>
+        </header>
+        
+        <main class="content-area">
+            <div class="table-container">
+                <table class="file-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date Modified</th>
+                            <th>Size</th>
+                            <th class="actions-col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="file-list">
+                        <!-- File rows will be rendered here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Dialog -->
+    <dialog id="upload-dialog" class="glass-dialog">
+        <div class="dialog-content">
+            <h2>Upload File</h2>
+            <p id="upload-path-text" class="text-secondary">Uploading to: /</p>
+            <form id="upload-form">
+                <div class="form-group">
+                    <input type="file" id="upload-file-input" required />
+                </div>
+                <div class="dialog-actions">
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('upload-dialog').close()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Move Dialog -->
+    <dialog id="move-dialog" class="glass-dialog">
+        <div class="dialog-content">
+            <h2 id="move-title">Move / Rename</h2>
+            <form id="move-form">
+                <div class="form-group">
+                    <label>Source Path:</label>
+                    <input type="text" id="move-source" readonly />
+                </div>
+                <div class="form-group">
+                    <label>Destination Path:</label>
+                    <input type="text" id="move-dest" required />
+                </div>
+                <div class="dialog-actions">
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('move-dialog').close()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>

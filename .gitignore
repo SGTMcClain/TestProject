@@ -1,0 +1,48 @@
+# .NET Core / .NET 9
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio / Rider
+.vs/
+.vscode/
+.idea/
+*.rsuser
+
+# Mac / OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Configuration overrides (typically kept local)
+appsettings.Development.json
+appsettings.Local.json
+
+# Test results
+TestResults/
+*.coverage
+
+# NuGet
+packages/
+*.nupkg
+
+# Node/Frontend (in case you add npm packages later)
+node_modules/
+.npm/
+
+# Publish output
+publish/
+out/

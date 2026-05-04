@@ -12,6 +12,11 @@ This project is built using a monolithic but heavily decoupled architecture:
 - **Frontend (Vanilla HTML/CSS/JS)**: A "zero-framework" SPA that relies on the native `fetch` API, modern CSS custom properties, and native HTML `<dialog>` elements to deliver a premium, glassmorphic "Infinite Sky" aesthetic.
 - **State Management**: The UI uses URL Hash-based routing (`window.onhashchange`) to maintain state. The URL fragment (e.g. `#/projects/InfiniteSky`) acts as the single source of truth for the current directory view.
 
+## AI usage
+- To quickly prototype this project I used Gemini to help brainstorm and build out the basic framework. 
+- I prompted the AI to work as if I was the lead developer and it was two developers on my team one focusing on the front end and one focused on the backend.
+	- I did this because as a development lead most times I would need to take project leads vision and distill it down to workable objectives for the team
+
 ## Setup Instructions
 
 1. **Install .NET 9 SDK**: Ensure you have the latest .NET 9 SDK installed on your machine.
